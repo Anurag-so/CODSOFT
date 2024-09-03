@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emily Parker - UX/UI Designer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .btn {
+            background-color: #ff6b6b;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-btn {
+            margin-top: 10px;
+            background-color: #ff6b6b;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-btn:hover {
+            background-color: #ff5252;
+        }
+
+        .btn:hover {
+            background-color: #ff5252;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 0;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: right;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .services {
+            background-color: #fff;
+            padding: 50px 0;
+        }
+
+        .services h2,
+        .projects h2,
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .service-item i {
+            font-size: 40px;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+
+        .projects {
+            padding: 50px 0;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-item {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            margin-bottom: 10px;
+        }
+
+        .contact {
+            background-color: #fff;
+            padding: 50px 0;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .form-group textarea {
+            height: 150px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image {
+                margin-top: 30px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active a {
+                padding: 10px 20px;
+                border-bottom: 1px solid #eee;
+            }
+
+            .menu-toggle {
+                display: block;
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+
+        .resume {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .resume h2 {
+            margin-bottom: 20px;
+        }
+
+        .resume p {
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-download:hover {
+            background-color: #ff5252;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Anurag Soni</div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#contact" class="btn">Hire Me</a>
+                </div>
+                <div class="menu-toggle">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Hi, I'm Anurag Soni</h1>
+                    <h2>Web Developer</h2>
+                    <p>I create beautiful, functional, and user-centered digital experiences that help businesses grow
+                        and succeed in the digital world.</p>
+                    <a href="#projects" class="btn-btn">View My Work</a>
+                </div>
+                <!-- <div class="hero-image">
+                    <img src="anurag.jpeg" style="height: 200px; width: 300px;" alt="Emily Parker">
+                </div> -->
+            </div>
+        </section>
+
+        <section id="resume" class="resume">
+            <div class="container">
+                <h2>My Resume</h2>
+                <p>Download my resume to learn more about my skills and experience.</p>
+                <a href="Resume.pdf" class="btn btn-download" download>Download Resume (PDF)</a>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>My Services</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <i class="fas fa-desktop"></i>
+                        <h3>Web Design</h3>
+                        <p>Creating beautiful, responsive websites that engage users and drive conversions.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile App Design</h3>
+                        <p>Designing intuitive and visually appealing mobile applications for iOS and Android.</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Brand Identity</h3>
+                        <p>Developing cohesive brand identities that resonate with your target audience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>My Latest Projects</h2>
+                <div class="project-grid">
+                    <div class="project-item">
+                        <img src="https://images.unsplash.com/photo-1585282263861-f55e341878f8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGVjbyUyMHRyYWNrJTIwYXBwfGVufDB8fDB8fHww?height=200&width=300"
+                            alt="EcoTrack App">
+                        <div class="project-info">
+                            <h3>EcoTrack App</h3>
+                            <p>A mobile app designed to help users track and reduce their carbon footprint.</p>
+                            <a href="#" class="btn-btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <img src="https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmVzdGF1cmFudCUyMHdlYnNpdGV8ZW58MHx8MHx8fDA%3D?height=200&width=300"
+                            alt="Foodie Finds Website">
+                        <div class="project-info">
+                            <h3>Foodie Finds Website</h3>
+                            <p>A responsive website for discovering and sharing local restaurant recommendations.</p>
+                            <a href="#" class="btn-btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <img src="https://images.unsplash.com/photo-1499728603263-13726abce5fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWluZGZ1bCUyMG1vbWVudCUyMGFwcGxpY2F0aW9ufGVufDB8fDB8fHww?height=200&width=300"
+                            alt="Mindful Moments App">
+                        <div class="project-info">
+                            <h3>Mindful Moments App</h3>
+                            <p>A meditation and mindfulness app with a calming user interface and soothing animations.
+                            </p>
+                            <a href="#" class="btn-btn">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Anurag Soni. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
