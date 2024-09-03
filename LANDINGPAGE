@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechInnovate Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+            color: #fff;
+            padding: 1rem 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1rem;
+            transition: opacity 0.3s ease;
+        }
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        .hero {
+            background-image: url('/placeholder.svg?height=600&width=1600');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: #d76d77;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background: #c45c66;
+        }
+        .features {
+            background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+            color: #fff;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .about {
+            padding: 4rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        .about img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .services {
+            padding: 4rem 0;
+            background: #f4f4f4;
+        }
+        .services h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .service-item {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+        .service-item img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">TechInnovate</div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#" class="btn">Get a Quote</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Innovate. Create. Elevate.</h1>
+            <p>Empowering businesses with cutting-edge digital solutions to thrive in the modern world.</p>
+            <a href="#" class="btn">Explore Our Services</a>
+            <a href="#" class="btn">Schedule a Consultation</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container features-grid">
+            <div>
+                <h3>Innovative Solutions</h3>
+                <p>Leveraging the latest technologies to solve complex business challenges.</p>
+            </div>
+            <div>
+                <h3>Expert Team</h3>
+                <p>A diverse group of skilled professionals dedicated to your success.</p>
+            </div>
+            <div>
+                <h3>Agile Methodology</h3>
+                <p>Flexible, iterative approach ensuring timely and efficient project delivery.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div>
+                <h2>About TechInnovate</h2>
+                <h3>A decade of excellence in digital innovation</h3>
+                <p>At TechInnovate, we're passionate about harnessing the power of technology to drive business growth. With over 10 years of experience, we've helped countless organizations transform their digital presence and achieve remarkable results.</p>
+                <p>Our team of experts specializes in web development, mobile applications, cloud solutions, and emerging technologies like AI and IoT. We're committed to delivering tailored solutions that address your unique business needs and challenges.</p>
+                <a href="#" class="btn">Learn More About Us</a>
+            </div>
+            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGVjaHxlbnwwfHwwfHx8MA%3D%3D" alt="TechInnovate team collaborating">
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <img src="https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2ViJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D" style="height: 200px; width: 300px;" alt="Web Development">
+                    <h3>Web Development</h3>
+                    <p>Custom, responsive websites and web applications tailored to your business needs.</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://images.unsplash.com/photo-1596742578443-7682ef5251cd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW9iaWxlJTIwYXBwc3xlbnwwfHwwfHx8MA%3D%3D" style="height: 200px; width: 300px;" alt="Mobile Apps">
+                    <h3>Mobile Apps</h3>
+                    <p>Intuitive and powerful mobile applications for iOS and Android platforms.</p>
+                </div>
+                <div class="service-item">
+                    <img src="https://plus.unsplash.com/premium_photo-1683120968693-9af51578770e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2xvdWQlMjBzb2x1dGlvbnN8ZW58MHx8MHx8fDA%3D" style="height: 200px; width: 300px;" alt="Cloud Solutions">
+                    <h3>Cloud Solutions</h3>
+                    <p>Scalable and secure cloud infrastructure to support your growing business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
